@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:FontIconColorChanges"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true"
+    mc:Ignorable="d"
+    x:Class="FontIconColorChanges.MainPage">
+    <StackLayout>
+        <CollectionView
+            ItemsSource="{Binding ItemsToDisplay}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout
+                    Orientation="Vertical"
+                    ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout
+                        Spacing="5">
+                        <StackLayout
+                            Orientation="Horizontal"
+                            Spacing="10">
+                            <Image
+                                VerticalOptions="Center"
+                                HorizontalOptions="Start">
+                                <Image.Source>
+                                    <FontImageSource
+                                        FontFamily="{DynamicResource MaterialFontIcons}"
+                                        Glyph="{Binding StartImageName}"
+                                        Size="32"
+                                        Color="{DynamicResource ThemeDependentTextColor}" />
+                                </Image.Source>
+                            </Image>
+                            <Label
+                                VerticalOptions="Center"
+                                HorizontalOptions="Start"
+                                Text="{Binding ItemText}" />
+                            <Image
+                                VerticalOptions="Center"
+                                HorizontalOptions="Start"
+                                IsVisible="{Binding IsNew}"
+                                Source="{StaticResource NewBox}" />
+                            <Image
+                                VerticalOptions="Center"
+                                HorizontalOptions="EndAndExpand"
+                                Source="{StaticResource ChevronRight}" />
+                        </StackLayout>
+                        <BoxView
+                            HorizontalOptions="FillAndExpand"
+                            Color="{StaticResource Accent}"
+                            Opacity="0.25"
+                            HeightRequest="1" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

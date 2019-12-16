@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FontIconColorChanges.Styles"
+    xmlns:projectRoot="clr-namespace:FontIconColorChanges"
+    x:Class="FontIconColorChanges.Styles.LightTheme">
+    <ResourceDictionary.MergedDictionaries>
+        <local:ThemeIndependentStyles />
+    </ResourceDictionary.MergedDictionaries>
+    <!-- Colors -->
+    <Color
+        x:Key="ThemeDependentTextColor">#27282A</Color>
+
+    <!-- Fonts -->
+    <FontImageSource
+        x:Key="ChevronRight"
+        FontFamily="{StaticResource MaterialFontIcons}"
+        Glyph="{x:Static projectRoot:MaterialFont.ChevronRight}"
+        Size="{StaticResource MenuItemIconSize}"
+        Color="{StaticResource Accent}" />
+
+    <!-- Implicit Styles -->
+    <Style
+        TargetType="Label">
+        <Setter
+            Property="TextColor"
+            Value="Black" />
+    </Style>
+</ResourceDictionary>
