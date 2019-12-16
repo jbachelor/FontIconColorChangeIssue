@@ -11,6 +11,8 @@
     <!-- Colors -->
     <Color
         x:Key="ThemeDependentTextColor">#FFFFFF</Color>
+    <Color
+        x:Key="ThemeDependentButtonBackground">#0B0671</Color>
 
     <!-- Fonts -->
     <FontImageSource
@@ -26,5 +28,14 @@
         <Setter
             Property="TextColor"
             Value="#BBBBBB" />
+    </Style>
+
+    <!-- Explicit (keyed) Styles -->
+    <Style
+        x:Key="ThemeSensitiveBackground"
+        TargetType="ContentView">
+        <Setter
+            Property="BackgroundColor"
+            Value="#303030" />
     </Style>
 </ResourceDictionary>

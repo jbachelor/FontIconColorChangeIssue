@@ -8,10 +8,20 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true"
     mc:Ignorable="d"
+    Style="{DynamicResource ThemeSensitiveBackground}"
     x:Class="FontIconColorChanges.MainPage">
     <StackLayout>
+        <Button
+            HorizontalOptions="Center"
+            Padding="20,0"
+            CornerRadius="5"
+            Text="Refresh List"
+            BackgroundColor="{DynamicResource ThemeDependentButtonBackground}"
+            TextColor="{DynamicResource ThemeDependentTextColor}"
+            Command="{Binding RefreshListCommand}" />
         <CollectionView
-            ItemsSource="{Binding ItemsToDisplay}">
+            ItemsSource="{Binding ItemsToDisplay}"
+            EmptyView="Pretending to search for items...">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout
                     Orientation="Vertical"

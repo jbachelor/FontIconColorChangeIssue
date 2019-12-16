@@ -1,19 +1,25 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace FontIconColorChanges
 {
     public class MainPageViewModel : INotifyPropertyChanged
     {
+        public ICommand RefreshListCommand { get; set; }
+
         private ObservableCollection<MyModelItem> _itemsToDisplay;
         public ObservableCollection<MyModelItem> ItemsToDisplay
         {
             get => _itemsToDisplay;
             set
             {
-                if(value != _itemsToDisplay)
+                if (value != _itemsToDisplay)
                 {
                     _itemsToDisplay = value;
                     OnPropertyChanged("ItemsToDisplay");
@@ -23,14 +29,23 @@ namespace FontIconColorChanges
 
         public MainPageViewModel()
         {
+            ItemsToDisplay = new ObservableCollection<MyModelItem>();
+            RefreshListCommand = new Command(OnRefreshListTapped);
+            PopulateMenuItemsFizzBuzzIsh();
+        }
+
+        private async void OnRefreshListTapped(object obj)
+        {
+            ItemsToDisplay.Clear();
+            await Task.Delay(1000);
             PopulateMenuItemsFizzBuzzIsh();
         }
 
         private void PopulateMenuItemsFizzBuzzIsh()
         {
-            ItemsToDisplay = new ObservableCollection<MyModelItem>();
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(PopulateMenuItemsFizzBuzzIsh)}");
 
-            for (int i = 0; i < 29; i++)
+            for (int i = 1; i < 43; i++)
             {
                 var newItem = new MyModelItem
                 {
