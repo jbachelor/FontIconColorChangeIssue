@@ -4,6 +4,9 @@
 [iOSLightAtLaunch]: ghImages/iOSLightModeAtLaunch.png "iOS in Light Mode at App Launch"
 [iOSLightAfterDark]: ghImages/iOSLightModeAfterDarkMode.png "iOS in Light Mode after app has been running in Dark Mode"
 
+# Update (2020.04.30)
+Wonderful news! The Xamarin.Forms team has [resolved the issue](https://github.com/xamarin/Xamarin.Forms/issues/8920) this repo was designed to demonstrate. I will leave this as is for anyone who wants to see the issue, but if you upgrade to [XF 4.6](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/release-notes/4.6/4.6.0), the issue should be gone. Big thanks to the Xamarin.Forms team for all their hard work, and for fixing this issue!
+
 # FontIconColorChangeIssue
 This sample app is designed to demonstrate a UI bug in supporting dark mode in Xamarin.Forms. I discovered the problem while working on an app and attempting to support both light & dark mode for iOS and Android. What you'll see in this sample app is a single view with a button and a CollectionView. The CollectionView is populated with some fake data generated in the MainPageViewModel class.
 
